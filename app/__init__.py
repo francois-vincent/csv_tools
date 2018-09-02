@@ -1,7 +1,3 @@
 from read_csv import ReadCsv
 
-rc = ReadCsv()
-
-
-
-
+rc = ReadCsv('../datasets/table1.csv')

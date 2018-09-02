@@ -1,15 +1,28 @@
 class ReadCsv(object):
 
-    def __init__(self):
+    def __init__(self, file_csv):
 
-        liste_entete = []
-        liste_field = []
-        meteo_csv = 'synop.2018090209.csv'
+        self.list_header, self.list_field = [], []
 
-        f = open(meteo_csv, 'r')
+        f = open(file_csv, 'r')
 
-        for i in enumerate(f):
-            if i.count(0):
-                liste_entete.append(i[1])
-            liste_field.append([i[1]])
+        for c, v in enumerate(f):
+            if c == 0:
+                self.list_header.append(v)
+            else:
+                self.list_field.append(v)
+           # print(self.list_header)
+        #print(self.list_field)
+
+
+        # for i in enumerate(f):
+        #
+        #     if i.count(0):
+        #         self.list_header.append(i[1])
+        #     else:
+        #         self.list_field.append([i[1]])
+        #
+        #     print(self.list_header)
+        # print(self.list_field)
+       # [ for i in enumerate(f) if i.count(0)  self.list_header.append(i[1])]
         f.close()
