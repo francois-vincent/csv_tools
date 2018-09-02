@@ -4,12 +4,10 @@ class ReadCsv(object):
 
         self.list_field = []
 
-        f = open(file_csv, 'r')
-
-        for c, v in enumerate(f):
-            if c == 0:
-                self.list_header = v.strip().split(';')
-            else:
-                self.list_field.append(v.strip().split(';'))
-
-        f.close()
+        with open(file_csv, 'r') as f:
+            for c, v in enumerate(f):
+                v = v.strip().split(';')
+                if c == 0:
+                    self.list_header = v
+                else:
+                    self.list_field.append(v)
