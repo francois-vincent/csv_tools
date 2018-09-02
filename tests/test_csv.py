@@ -24,3 +24,4 @@ class TestsCsv(TestCase):
         rc = ReadCsv(file)
         self.assertEqual(rc.list_header, ['A', 'B', 'C'])
         self.assertEqual(rc.list_record, [['D', 'E', 'F']])
+        self.assertEqual(type(iter(rc)), IterCsv)

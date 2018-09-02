@@ -27,7 +27,7 @@ class ReadCsv(object):
                     index += 1
 
     def __iter__(self):
-        return IterCsv(self, self.list_header, self.list_record)
+        return IterCsv(self.list_header, self.list_record)
 
 
 class IterCsv(object):
